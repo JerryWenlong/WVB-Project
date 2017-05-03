@@ -1,0 +1,103 @@
+#testresult input{
+  color: #535353
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-active {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.example-5-enter-active, .example-5-leave-active{
+    transition: all 1s
+}
+.example-5-enter, .example-5-leave-active{
+    opacity: 0
+}
+.example-5{
+    position: relative;
+    height: 50px;
+}
+.example-5 button{
+    position: absolute;
+    width: 58px;
+    left: calc(50% - 29px)
+}
+.example-5-enter{
+    transform: translateX(31px);
+}
+.example-5-leave-active{
+    transform: translateX(-31px);
+}
+
+.example-6-enter-active, .example-6-leave-active {
+  transition: opacity .3s ease;
+}
+.example-6-enter, .example-6-leave-active {
+  opacity: 0;
+}
+.list-item {
+  transition: all 1s;
+  display: inline-block;
+  margin-right: 10px;
+}
+/*.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}*/
+.list-enter, .list-leave-active {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.list-leave-active{
+  position: absolute;
+}
+
+.sudoku-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 238px;
+  margin-top: 10px;
+}
+.cell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #aaa;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+.cell:nth-child(3n) {
+  margin-right: 0;
+}
+.cell:nth-child(27n) {
+  margin-bottom: 0;
+}
+.cell-move {
+  transition: transform 1s;
+}
+
+svg { display: block; }
+polygon { fill: #41B883; }
+circle {
+  fill: transparent;
+  stroke: #35495E;
+}
+input[type="range"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}

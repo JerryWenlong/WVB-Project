@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>webpack + vue</title>
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">Vue learning.</h3>
+                    </div>
+                </div>
+                <div class="inner cover" id="testresult">
+                    <h2 class="cover-heading">{{demoTitle}}</h2>
+                    <div class="lead" v-html="context"></div>
+                    <p class="lead">
+                        <a v-on:click="nextresult" class="btn btn-lg btn-default">{{btnText}}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
