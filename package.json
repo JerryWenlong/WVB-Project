@@ -34,7 +34,6 @@
     "lodash-webpack-plugin": "^0.11.2",
     "null-loader": "^0.1.1",
     "style-loader": "^0.16.1",
-    "transform-runtime": "0.0.0",
     "tween.js": "^16.6.0",
     "url-loader": "^0.5.8",
     "vue": "^2.3.3",

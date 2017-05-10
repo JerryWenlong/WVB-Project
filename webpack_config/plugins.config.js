@@ -8,7 +8,7 @@ var configPlugins = [];
 
 pageArr.forEach((page) => {
   const htmlPlugin = new HtmlWebpackPlugin({
-    filename: `${page}/page.html`,
+    filename: `${page}/page.ejs`,
     template: path.resolve(dirVars.pagesDir, `./${page}/html.js`),
     chunks: [page, 'commons/commons'],
     hash: true, // 为静态资源生成hash值
@@ -23,4 +23,5 @@ configPlugins.push(new webpack.LoaderOptionsPlugin({
     }
 }))
 
+configPlugins.push(new webpack.HotModuleReplacementPlugin())
 module.exports = configPlugins;

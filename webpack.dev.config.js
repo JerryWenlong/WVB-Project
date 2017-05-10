@@ -1,5 +1,11 @@
+var Entry = require('./webpack_config/entry.config.js');
+
+Object.keys(Entry).forEach(function (name) { 
+    var extras = ['webpack-hot-middleware/client?reload=1'];
+     Entry[name] = extras.concat(Entry[name]);
+});
 module.exports = {
-  entry: require('./webpack_config/entry.config.js'),
+  entry: Entry,
 
   output: require('./webpack_config/output.config.js'),
 
