@@ -1,2 +1,3 @@
 var homePage = require('homepage')
-module.exports = homePage
+var content = require('./content_jumbotron.ejs')
+module.exports = homePage({content:content()})

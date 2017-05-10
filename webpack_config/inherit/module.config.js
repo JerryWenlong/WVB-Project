@@ -53,6 +53,12 @@ module.exports = {
       loader: 'null-loader',
     },
     {
+      // test
+      test: /\.(woff|woff2|svg|eot|ttf)$/,
+      include: dirVars.srcRootDir,
+      loader: 'null-loader',
+    },
+    {
       //vue-loader
       test: /\.vue$/,
       exclude: /node_moudles/,

@@ -1,2 +1,3 @@
-var indexPage = require('./temp.html')
-module.exports = indexPage
+var homePage = require('homepage')
+var content = require('./content.ejs')
+module.exports = homePage({content:content()})

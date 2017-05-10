@@ -9,7 +9,8 @@ module.exports = {
     selfDir: path.resolve(dirVars.publicDir, 'self/'),
     vendorDir: dirVars.vendorDir,
     /* layout */
-    homepage: path.resolve(dirVars.srcRootDir, 'index.html'),
+    commonLayout: path.resolve(dirVars.publicDir, 'self/commonLayout.js'),
+    homepage: path.resolve(dirVars.srcRootDir, 'index.ejs'),
     vue: 'vue/dist/vue.js', //
   },
 

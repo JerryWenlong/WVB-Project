@@ -22,4 +22,5 @@ configPlugins.push(new webpack.LoaderOptionsPlugin({
         devServer: require('./vendor/devServer.config.js')
     }
 }))
+
 module.exports = configPlugins;

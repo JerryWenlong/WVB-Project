@@ -2,10 +2,12 @@ import Vue from 'vue'
 require("jquery");
 require('bootstrap/dist/js/bootstrap.min.js');
 require('bootstrap/dist/css/bootstrap.min.css');
-require('cssDir/demo.css')
 require('cssDir/cover.css');
+require('cssDir/demo.css')
 require('cssDir/transition.css');
+require('commonLayout')
 var App = require("./Test.vue");
+var viewBar = require("componentsDir/view-bar.vue");
 var pagefoot = require("componentsDir/foot.vue");
 var transitionArr = require("./transition.js");
 
@@ -38,3 +40,8 @@ var resultVM = new Vue({
         }
     }
 })
+
+// var barVM = new Vue({
+//     el: '#view-bar',
+//     components: {viewBar}
+// })
