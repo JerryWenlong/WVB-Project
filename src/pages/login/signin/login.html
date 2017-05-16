@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6" >
+                    <div id="loginForm" class="form-horizontal" >
+                        <span class="heading">用户登录</span>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="用户名" v-model="user.name">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="form-group help">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="密　码" v-model="user.pw">
+                            <i class="fa fa-lock"></i>
+                            <a href="#" class="fa fa-question-circle"></a>
+                        </div>
+                        <div class="form-group">
+                            <div class="main-checkbox">
+                                <input type="checkbox" value="None" id="checkbox1" name="check"/>
+                                <label for="checkbox1"></label>
+                            </div>
+                            <span class="text">Remember me</span>
+                            <button  class="btn btn-default" v-on:click="login">登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

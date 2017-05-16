@@ -3,8 +3,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var dirVars = require('./base/dir_vars.config.js');
 var pageArr = require('./base/page_entries.config.js');
-
-var configPlugins = [];
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var configPlugins = [
+  new ExtractTextPlugin('[name]/styles.css'),
+];
 
 pageArr.forEach((page) => {
   const htmlPlugin = new HtmlWebpackPlugin({
@@ -23,5 +25,9 @@ configPlugins.push(new webpack.LoaderOptionsPlugin({
     }
 }))
 
+/*热加载 hrm dependicy*/
+configPlugins.push(new webpack.optimize.OccurrenceOrderPlugin())
 configPlugins.push(new webpack.HotModuleReplacementPlugin())
+configPlugins.push(new webpack.NoEmitOnErrorsPlugin())
+/*********************/
 module.exports = configPlugins;
