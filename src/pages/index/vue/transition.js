@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+var Vue = require('vue')
 require('lodash');
 
 var myTools = require("selfDir/myTools.js");

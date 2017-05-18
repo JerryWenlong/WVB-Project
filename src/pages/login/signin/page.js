@@ -2,7 +2,7 @@ require("jquery");
 require('bootstrap/dist/js/bootstrap.min.js');
 require('bootstrap/dist/css/bootstrap.min.css');
 require('./style.css')
-import Vue from 'vue'
+var Vue = require('vue')
 
 var VM = new Vue({
     el: '#loginForm',

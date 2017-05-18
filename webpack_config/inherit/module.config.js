@@ -19,7 +19,7 @@ module.exports = {
       include: dirVars.srcRootDir,
       loader: 'babel-loader',
       options: {
-        presets: [['es2015', { loose: true }]],
+        presets: [['es2015', {"modules": false}]],
         cacheDirectory: true,
         plugins: ['transform-runtime'],
       },

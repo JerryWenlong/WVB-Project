@@ -4,9 +4,22 @@ var path = require('path');
 var dirVars = require('./base/dir_vars.config.js');
 var pageArr = require('./base/page_entries.config.js');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var babiliWebpackPlugin = require('babili-webpack-plugin')
 var configPlugins = [
   new ExtractTextPlugin('[name]/styles.css'),
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'commons/commons',      // 需要注意的是，chunk的name不能相同！！！
+    filename: '[name]/bundle.js',
+    minChunks: 4,
+  }),
+  // new webpack.optimize.UglifyJsPlugin({
+  //   beautify: true,
+  //   compress: {warnings: false,},
+  //   output:{comments: true}
+  // })
+  // new babiliWebpackPlugin() //压缩
 ];
+
 
 pageArr.forEach((page) => {
   const htmlPlugin = new HtmlWebpackPlugin({
@@ -30,4 +43,5 @@ configPlugins.push(new webpack.optimize.OccurrenceOrderPlugin())
 configPlugins.push(new webpack.HotModuleReplacementPlugin())
 configPlugins.push(new webpack.NoEmitOnErrorsPlugin())
 /*********************/
+
 module.exports = configPlugins;

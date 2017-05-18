@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+var Vue = require('vue')
 require("jquery");
 require('bootstrap/dist/js/bootstrap.min.js');
 require('bootstrap/dist/css/bootstrap.min.css');
