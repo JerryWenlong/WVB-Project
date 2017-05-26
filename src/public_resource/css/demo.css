@@ -4,6 +4,9 @@ body {
 ul, li{
     list-style: none
 }
+[v-cloak] {
+  display: none;
+}
 .starter-template {
   padding: 40px 15px;
   text-align: center;

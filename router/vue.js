@@ -3,8 +3,6 @@ var router = express.Router();
 
 router.get('/', function(req, res, next){
     if(req.session.site){
-        console.log('req.session.site.isLogin->' + req.session.site.isLogin);
-        console.log('req.session.site.name->' + req.session.site.name);
         res.render('index/vue/page.ejs', {
             user: {
                 isLogin: req.session.site.isLogin,

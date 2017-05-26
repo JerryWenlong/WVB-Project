@@ -1,3 +1,4 @@
+process.traceDeprecation = true;
 var Entry = require('./webpack_config/entry.config.js');
 
 Object.keys(Entry).forEach(function (name) { 

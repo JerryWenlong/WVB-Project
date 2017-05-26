@@ -51,8 +51,9 @@ app.engine('.html', require('ejs').__express);
 
 var router_index = require('./router/index')
 var router_login = require('./router/login');
-console.log('hello')
+var router_vue = require('./router/vue')
 
 app.use('/', router_index)
 app.use('/login', router_login)
+app.use('/vue', router_vue)
 module.exports = app;

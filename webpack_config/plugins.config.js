@@ -7,11 +7,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var babiliWebpackPlugin = require('babili-webpack-plugin')
 var configPlugins = [
   new ExtractTextPlugin('[name]/styles.css'),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'commons/commons',      // 需要注意的是，chunk的name不能相同！！！
-    filename: '[name]/bundle.js',
-    minChunks: 4,
-  }),
+  // new webpack.optimize.CommonsChunkPlugin({
+  //   name: 'commons/commons',      // 需要注意的是，chunk的name不能相同！！！
+  //   filename: '[name]/bundle.js',
+  //   minChunks: 4,
+  // }),
   // new webpack.optimize.UglifyJsPlugin({
   //   beautify: true,
   //   compress: {warnings: false,},
