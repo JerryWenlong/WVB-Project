@@ -1,0 +1,7 @@
+<div id="editor" class="row">
+    <div class="col-lg-8" style="min-height: 500px;">
+        <textarea style="min-height: 500px;" :value="input" @input="update"></textarea>
+    </div>
+    
+    <div class="col-lg-4 display" v-html="compiledMarkdown"></div>
+</div>
