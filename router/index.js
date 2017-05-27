@@ -40,4 +40,9 @@ router.get('/editor', function(req, res, next){
     })
 })
 
+router.post('/saveMdFile', function(req, res, next){
+    res.send({
+        message: 'success'
+    })
+})
 module.exports = router

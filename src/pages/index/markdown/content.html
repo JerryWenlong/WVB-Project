@@ -1,7 +1,43 @@
-<div id="editor" class="row">
-    <div class="col-lg-8" style="min-height: 500px;">
-        <textarea style="min-height: 500px;" :value="input" @input="update"></textarea>
+<div id="editor" v-cloak>
+    <div class="row">
+        <div class="col-lg-8" style="min-height: 500px;">
+            <textarea style="min-height: 500px;" :value="input" @input="update"></textarea>
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+
+        <div class="col-lg-4 display" v-html="compiledMarkdown"></div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-lg-1 col-lg-offset-6 button-line" >
+            <button class="btn" @click="showSave = true">保存</button>
+        </div>
+        <div class="col-lg-1 button-line" >
+            <button class="btn" @click="showPreview = true">预览</button>
+            <div class="clearfix visible-xs-block"></div>
+        </div>
     </div>
-    
-    <div class="col-lg-4 display" v-html="compiledMarkdown"></div>
+
+
+    <modal v-if="showSave">
+        <h3 slot="header">保存</h3>
+        <div slot="body">
+            <p style="color: #aaa">确认保存该文档到服务器吗？</p>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">文件名:</span>
+                <input type="text" name="" class="form-control" :placeholder="defaultFileName" aria-describedby="basic-addon1" :value="fileName">
+            </div>
+        </div>
+        <div slot="footer">
+            <button class="btn" @click="submit()">确定</button>
+            <button class="btn" @click="showSave=false">取消</button>
+        </div>
+    </modal>
+
+    <modal content-width="50%" v-if="showPreview" >
+        <h3 slot="header">预览</h3>
+        <div slot="body" v-html="compiledMarkdown"></div>
+        <div slot="footer">
+            <button class="modal-default-button" @click="showPreview = false">OK</button>
+        </div>
+    </modal>
+
 </div>

@@ -68,7 +68,7 @@
     <transition name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
-                <div class="modal-container">
+                <div class="modal-container" v-bind:style="{width: containerContentWidth}">
                     <div class="modal-header">
                         <slot name="header">
                           default header
@@ -81,7 +81,6 @@
                     </div>
                     <div class="modal-footer">
                         <slot name="footer">
-                            default footer
                             <button class="modal-default-button" @click="$emit('close')">OK</button>
                         </slot>
                     </div>
@@ -90,3 +89,24 @@
         </div>
     </transition>
 </template>
+
+<script>
+  export default{
+    props:{
+      contentWidth:{
+        type: String,
+        default: '300px'
+      }
+    },
+    data: function(){
+      return {
+        containerContentWidth: 300 + 'px'
+      }
+    },
+    mounted:function(){
+      if(this.contentWidth){
+        this.containerContentWidth = this.contentWidth;
+      }
+    }
+  }
+</script>
