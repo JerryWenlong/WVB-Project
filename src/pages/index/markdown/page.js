@@ -40,7 +40,7 @@ new Vue({
             let fileName = this.fileName || this.defaultFileName
             $.post('/saveMdFile', {
                 'fileName': fileName,
-                'fileStr': input
+                'content': input
             }, function(){console.log('success')})
         },
         submit: function(){

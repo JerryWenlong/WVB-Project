@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var mdFileWriter = require('../modules/markdownFS.js')
 
 router.get('/', function(req, res, next){
     let _site = req.session.site;
@@ -41,8 +42,14 @@ router.get('/editor', function(req, res, next){
 })
 
 router.post('/saveMdFile', function(req, res, next){
-    res.send({
-        message: 'success'
+    const content = req.body.content;
+    const fileName = req.body.fileName; 
+    var writer = new mdFileWriter(fileName);
+    writer.saveAsync(content, function(){
+        res.send({message: 'success'})
+    }, function(){
+        res.send(500, {message: 'failed to save file'})
     })
+    
 })
 module.exports = router
