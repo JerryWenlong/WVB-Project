@@ -68,7 +68,7 @@
     <transition name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
-                <div class="modal-container" v-bind:style="{width: containerContentWidth}">
+                <div class="modal-container" v-bind:style="{width: modalContentWidth, 'background-color': modalContentBgColor}">
                     <div class="modal-header">
                         <slot name="header">
                           default header
@@ -96,16 +96,24 @@
       contentWidth:{
         type: String,
         default: '300px'
+      },
+      contentColor:{
+        type: String,
+        default: '#FFF'
       }
     },
     data: function(){
       return {
-        containerContentWidth: 300 + 'px'
+        modalContentWidth: 300 + 'px',
+        modalContentBgColor: '#fff'
       }
     },
     mounted:function(){
       if(this.contentWidth){
-        this.containerContentWidth = this.contentWidth;
+        this.modalContentWidth = this.contentWidth;
+      }
+      if(this.contentColor){
+        this.modalContentBgColor = this.contentColor
       }
     }
   }
