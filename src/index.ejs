@@ -82,7 +82,7 @@
             <div class="container">
                 <%= content %>
             </div>
-            <div id="modal">
+            <div id="modal" v-cloak>
                 <modal v-if="showModal" @close="showModal = false">
                     <h3 slot="header">Customer header</h3>
                 </modal>
