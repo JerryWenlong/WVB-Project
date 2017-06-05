@@ -16,7 +16,7 @@ class Redis {
         // let RDS_HOST = '10.19.35.74';//my VM
 //      let RDS_HOST = '127.0.0.1';
         let RDS_OPTS = {
-             auth_pass: 'alwaysJs.com'
+             auth_pass: 'ace.ran-25a'
         };
         let client = redis.createClient(RDS_PORT, RDS_HOST, RDS_OPTS);
         return client;
