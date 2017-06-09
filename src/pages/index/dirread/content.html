@@ -1,0 +1,37 @@
+<div id="dirReader" v-cloak>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">文档</span>
+      <input type="text" class="form-control" placeholder="File Name"
+       aria-describedby="basic-addon1" v-model="query" v-on:focus="show=true">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" v-on:click="openFile()">确认</button>
+      </span>
+      
+    </div>
+
+    <transition-group
+      name="staggered-fade"
+      tag="ul"
+      id="fileList"
+      v-bind:css="false"
+      v-on:before-enter="beforeEnter"
+      v-on:enter="enter"
+      v-on:leave="leave"
+    >
+      <li
+        v-for="(item, index) in computedList"
+        v-bind:key="item.msg"
+        v-bind:data-index="index"
+        v-on:click = "selectFile(index)"
+      >{{ item.msg }}</li>
+    </transition-group>
+
+    <modal content-width="70%" content-color="#333" v-if="showPreview" close-modal="showPreview">
+        <h3 slot="header">{{query}}</h3>
+        <div slot="body" v-html="compiledMarkdown"></div>
+        <div slot="footer">
+            <button class="modal-default-button" @click="showPreview = false">OK</button>
+        </div>
+    </modal>
+
+</div>

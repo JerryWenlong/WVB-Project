@@ -8,7 +8,7 @@
         <div class="col-lg-4 display" v-html="compiledMarkdown"></div>
         <div class="clearfix visible-xs-block"></div>
         <div class="col-lg-1 col-lg-offset-6 button-line" >
-            <button class="btn" @click="showSave = true">保存</button>
+            <button class="btn" @click="showSave = true;">保存</button>
         </div>
         <div class="col-lg-1 button-line" >
             <button class="btn" @click="showPreview = true">预览</button>
@@ -17,7 +17,7 @@
     </div>
 
 
-    <modal v-if="showSave">
+    <modal v-if="showSave" close-modal="showSave">
         <h3 slot="header">保存</h3>
         <div slot="body">
             <p style="color: #aaa">确认保存该文档到服务器吗？</p>
@@ -32,11 +32,11 @@
         </div>
     </modal>
 
-    <modal content-width="50%" content-color="#333" v-if="showPreview" >
+    <modal content-width="50%" content-color="#333" v-if="showPreview" close-modal="showPreview">
         <h3 slot="header">预览</h3>
         <div slot="body" v-html="compiledMarkdown"></div>
         <div slot="footer">
-            <button class="modal-default-button" @click="showPreview = false">OK</button>
+            <button class="modal-default-button" @click="close">OK</button>
         </div>
     </modal>
 

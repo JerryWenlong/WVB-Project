@@ -31,23 +31,6 @@ var init = function(){
           $('#wrapper').toggleClass('toggled');
     });  
   });
-
-  // global Vue
-  let showModal = {
-    showModal: false
-  }
-  // register modal component
-  var gbmodal = new Vue({
-    el: '#modal',
-    data: showModal,
-    components:{
-      'modal': modal
-    }
-  })
-  var global_modal_switch = new Vue({
-    el: '#global_modal_switch',
-    data: showModal
-  })
 }
 
 

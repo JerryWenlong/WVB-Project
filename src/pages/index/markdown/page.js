@@ -20,6 +20,14 @@ new Vue({
         showPreview: false,
         fileName: ''
     },
+    mounted:function(){
+        // let vm = this;
+        // vm.$on('close', function(){
+        //     console.log('close')
+        //     vm.showSave = false;
+        //     vm.showPreview = false;
+        // })
+    }, 
     computed: {
         compiledMarkdown: function(){
             return marked(this.input, {sanitize: true})
@@ -46,6 +54,9 @@ new Vue({
         submit: function(){
             this.showSave = false;
             this.upload();
+        },
+        close: function(){
+            this.showPreview = false;
         }
     },
     components:{

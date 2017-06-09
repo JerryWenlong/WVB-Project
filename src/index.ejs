@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <title>webpack 2 demo</title>
+     <title>AlwaysJs</title>
    </head>
    <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -16,11 +16,11 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                           </button>
-                <a href="#" class="navbar-brand">Test</a>
+                <a href="#" class="navbar-brand">JavaScript</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://www.alwaysjs.com" class="active">Blog</a></li>
+                    <li><a href="http://myblog.alwaysjs.com" class="active">Blog</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
                     <li class="dropdown">
@@ -63,11 +63,14 @@
                 <li>
                     <a href="/vue"><i class="fa fa-fw fa-file-o"></i> Vue Test</a>
                 </li>
+                <li>
+                    <a href="/dirreader"> Dir Reader</a>
+                </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Examples <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header">Dropdown heading</li>
-                    <li id="global_modal_switch"><a @click="showModal = true">Show Modal</a></li>
+                    <li id="global_modal_switch"><a>Show Modal</a></li>
                     <li><a href="#">Another action</a></li>
                   </ul>
                 </li>
@@ -81,11 +84,6 @@
             </button>
             <div class="container">
                 <%= content %>
-            </div>
-            <div id="modal" v-cloak>
-                <modal v-if="showModal" @close="showModal = false">
-                    <h3 slot="header">Customer header</h3>
-                </modal>
             </div>
         </div>
     </div>

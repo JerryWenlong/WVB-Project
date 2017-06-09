@@ -17,7 +17,9 @@
     }
 
     .modal-container {
+      position: relative;
       width: 300px;
+      max-height: 80%;
       margin: 0px auto;
       padding: 20px 30px;
       background-color: #fff;
@@ -25,6 +27,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
       transition: all .3s ease;
       font-family: Helvetica, Arial, sans-serif;
+      overflow: auto;
     }
 
     .modal-header h3 {
@@ -63,12 +66,25 @@
       transform: scale(1.1);
     }
 
+    .modal-close{
+      position: absolute;
+      width: 30px;
+      height: 20px;
+      right: 0;
+      top: 0;
+      color: #FFF;
+      text-align: center;
+    }
+    .modal-close:after{
+      content: "\2715"
+    }
 </style>
 <template>
     <transition name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
                 <div class="modal-container" v-bind:style="{width: modalContentWidth, 'background-color': modalContentBgColor}">
+                    <span class="modal-close" @click="$emit('close')"></span>
                     <div class="modal-header">
                         <slot name="header">
                           default header
@@ -100,6 +116,9 @@
       contentColor:{
         type: String,
         default: '#FFF'
+      },
+      closeModal:{
+        type: String
       }
     },
     data: function(){
@@ -115,6 +134,10 @@
       if(this.contentColor){
         this.modalContentBgColor = this.contentColor
       }
+      let vm = this
+      vm.$on('close', function(){
+        vm.$root.$data[vm.closeModal] = false
+      })
     }
   }
 </script>
