@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www",
     "debug": "node --debug=12345 ./bin/www",
-    "build": "webpack --config webpack.dev.config.js"
+    "build": "webpack --config webpack.dev.config.js",
+    "build-prod": "webpack --config webpack.prod.config.js"
   },
   "keywords": [],
   "author": "Jerry Meng",
@@ -48,6 +49,7 @@
     "vue": "^2.3.3",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^11.3.4",
+    "vue-recyclerview": "^0.4.0",
     "vue-template-compiler": "^2.2.6",
     "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.10.2",

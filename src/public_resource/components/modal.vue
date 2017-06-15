@@ -74,6 +74,7 @@
       top: 0;
       color: #FFF;
       text-align: center;
+      cursor: pointer;
     }
     .modal-close:after{
       content: "\2715"

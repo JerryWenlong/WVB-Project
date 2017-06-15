@@ -111,4 +111,36 @@ router.post('/openFile', function(req, res, next){
     })
 })
 
+router.get('/infiniteList', function(req, res, next){
+    let _site = req.session.site;
+    let hasLogin = false;
+    let userName = '';
+    if(_site){
+        hasLogin = true;
+        userName = _site.userName;
+    }
+    res.render('index/vuerecyclerview/page.ejs', {
+        user:{
+            isLogin: hasLogin,
+            userName: userName
+        }
+    })
+})
+
+router.get('/waterflow', function(req, res, next){
+    let _site = req.session.site;
+    let hasLogin = false;
+    let userName = '';
+    if(_site){
+        hasLogin = true;
+        userName = _site.userName;
+    }
+    res.render('index/waterflow/page.ejs', {
+        user:{
+            isLogin: hasLogin,
+            userName: userName
+        }
+    })
+})
+
 module.exports = router

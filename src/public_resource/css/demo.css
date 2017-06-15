@@ -71,7 +71,7 @@ html {
   display: none;
 }
 #page-content-wrapper {
-  padding-top: 30px;
+  /*padding-top: 30px;*/
   width: 100%;
 }
 /*-------------------------------*/
@@ -182,7 +182,7 @@ html {
   height: 32px;
   margin-left: 15px;
   position: fixed;
-  /*top: 20px;*/
+  top: 80px;
   width: 32px;
   z-index: 999;
 }

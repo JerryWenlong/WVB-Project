@@ -27,9 +27,13 @@ textarea {
 code {
   color: #f66;
 }
+@media (max-width: 1200px){
+  .display{
+    display: none
+  }
+}
 .display{
   max-height: 500px;
-  
   transform-origin: left top;
   transform: scale(0.5, 0.5);
 }
