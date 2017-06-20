@@ -50,7 +50,7 @@ router.get('/editor', function(req, res, next){
 router.post('/saveMdFile', function(req, res, next){
     const content = req.body.content;
     const fileName = req.body.fileName; 
-    var writer = new mdFileWriter(fileName);
+    var writer = new mdFileWriter({fileName: fileName});
     writer.saveAsync(content, function(){
         res.send({message: 'success'})
     }, function(){

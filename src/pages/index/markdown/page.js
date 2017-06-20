@@ -18,6 +18,9 @@ new Vue({
         `,
         showSave: false,
         showPreview: false,
+        showSuccess: false,
+        showFailed: false,
+        failedMsg:'',
         fileName: ''
     },
     mounted:function(){
@@ -43,13 +46,24 @@ new Vue({
             this.input = e.target.value
         }, 300),
         upload: function(){
-            
+            let vm = this;
             let input = this.input;
-            let fileName = this.fileName || this.defaultFileName
-            $.post('/saveMdFile', {
-                'fileName': fileName,
-                'content': input
-            }, function(){console.log('success')})
+            let fileName = this.fileName || this.defaultFileName;
+            
+            fetch('/saveMdFile', {
+                method: 'post', 
+                mode: 'cors', 
+                headers:{'Content-Type': 'application/x-www-form-urlencoded'}, 
+                body:`fileName=${fileName}&content=${input}`})
+            .then(function(res){
+                if(res.ok){
+                    vm.showSuccess=true;console.log('success')
+                }else{
+                    return 'Failed to save the document!'
+                }
+            })
+            .then(e=>{vm.failedMsg=e;vm.showFailed=true})
+            .catch(e=>{vm.failedMsg=e;vm.showFailed=true})
         },
         submit: function(){
             this.showSave = false;

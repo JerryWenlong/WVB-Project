@@ -1,6 +1,4 @@
 require("jquery");
-let Vue = require('vue');
-let modal = require('componentsDir/modal.vue')
 // init left-side-bar
 var init = function(){
   $(document).ready(function () {

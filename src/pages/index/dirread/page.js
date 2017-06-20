@@ -11,6 +11,17 @@ let marked = require('vendorDir/marked.js');
 require('./style.css')
 let Vue = require('vue')
 let modal = require('componentsDir/modal.vue')
+
+// let getFileList = async function(list){
+//     try{
+//         let res = await fetch('/getFileList', {method:'get', mode:'cors'})
+//             .then(res => res.json())
+//         res.error?  list=[] : res.data.map(item=>list.push({msg: item}))
+//     }catch(err){
+//         console.log("Oops! failed:" + err)
+//     }
+// }
+
 new Vue({
     el: '#dirReader',
     data: {
@@ -24,18 +35,29 @@ new Vue({
     mounted:function(){
         // get list
         let vm = this;
-        $.get('/getFileList', {}, function(res){
-            if(res.error){
-                vm.list = []
-            }else{
-                vm.list = []
-                var fileList = res.data
-                for(var i=0; i<fileList.length;i++){
-                    vm.list.push({msg: fileList[i]})
-                }
-            }
-        })
+        // $.get('/getFileList', {}, function(res){
+        //     if(res.error){
+        //         vm.list = []
+        //     }else{
+        //         vm.list = []
+        //         var fileList = res.data
+        //         for(var i=0; i<fileList.length;i++){
+        //             vm.list.push({msg: fileList[i]})
+        //         }
+        //     }
+        // })
         
+        fetch('/getFileList', {method:'get', mode:'cors'}).then(
+            res => res.json()
+        )
+        .then(
+            res => res.error? vm.list=[] : res.data.map(item=>vm.list.push({msg: item}))
+        )
+        .catch(
+            err => console.log("Oops! failed:" + err)
+        )
+        // getFileList(vm.list)
+
         $("#fileList").mouseover(function(e){
             $(e.target).css('background-color', "#ddd")
             e.stopPropagation()

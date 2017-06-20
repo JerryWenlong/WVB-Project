@@ -47,3 +47,30 @@ var pipe = (function () {
 }());
 
 pipe(3).double.pow.reverseInt.get; // 63
+
+let p1 = new Promise(function(resolve, reject){
+    console.log('p1 started')
+    setTimeout(()=>reject(new Error('fail')), 3000)
+})
+let p2 = new Promise(function(resolve, reject){
+    console.log('p2 started')
+    setTimeout(()=>resolve(p1), 1000)
+})
+p2.then(result => console.log(result)).catch(error=>console.log(error))
+
+//async/await test
+var url = ''
+var fetch_timeout = function(ms){
+    return new Promise((resolve)=>{
+        setTimeout(resolve, ms)
+    })
+}
+var fetchAsync = async function(value, ms){
+    try{
+        await fetch_timeout(ms)
+        console.log(value)
+    }catch(err){
+        console.log("Oops, error", err)
+    }
+}
+fetchAsync('fetch test => hello', 5000)

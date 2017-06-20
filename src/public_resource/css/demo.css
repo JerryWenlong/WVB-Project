@@ -21,7 +21,7 @@ body {
 body,
 html {
   height: 100%;
-  background-color: #583e7e;
+  background-color: #8D8D8D;
 }
 .nav .open > a {
   background-color: transparent;
@@ -298,25 +298,7 @@ html {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
-/* SOME DEMO STYLES - NOT REQUIRED */
-body,
-html {
-  background-color: #583e7e;
-}
-body h1,
-body h2,
-body h3,
-body h4 {
-  color: rgba(255, 255, 255, 0.9);
-}
-body p,
-body blockquote {
-  color: rgba(255, 255, 255, 0.7);
-}
-body a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: underline;
-}
+
 body a:hover {
   color: #ffffff;
 }

@@ -28,7 +28,7 @@ export default {
   methods: {
     add (e) {
       e.preventDefault()
-      console.log(this.data.name)
+      // console.log(this.data.name)
     }
   }
 }
