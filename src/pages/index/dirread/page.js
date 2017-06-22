@@ -35,18 +35,6 @@ new Vue({
     mounted:function(){
         // get list
         let vm = this;
-        // $.get('/getFileList', {}, function(res){
-        //     if(res.error){
-        //         vm.list = []
-        //     }else{
-        //         vm.list = []
-        //         var fileList = res.data
-        //         for(var i=0; i<fileList.length;i++){
-        //             vm.list.push({msg: fileList[i]})
-        //         }
-        //     }
-        // })
-        
         fetch('/getFileList', {method:'get', mode:'cors'}).then(
             res => res.json()
         )

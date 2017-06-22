@@ -67,7 +67,7 @@
     }
 
     .modal-close{
-      position: absolute;
+      position: fixed;
       width: 30px;
       height: 20px;
       right: 0;
