@@ -90,6 +90,36 @@ class myFsWriter {
             }
         })
     }
+    readSummary(fileName, callback){
+        let file = this.getFile(fileName);
+        const size = 500;
+        let buf = Buffer.alloc(size, '')
+        const offset = 0;
+        const position = 0;
+        //---- open  read
+        fs.open(file, 'r', (err, fd)=>{
+            if(err){
+                console.log('readFile failed!')
+            }else{
+                fs.read(fd, buf, offset, size, position, (err, bytesRead, buffer)=>{
+                    let data = {
+                        title: '',
+                        date: '',
+                        tags: '',
+                        summary: ''
+                    }
+                    if(err){
+                        console.log('Read summary failed!')
+                        callback({err: true, data: ''})
+                    }else{
+                        let summary = buffer.toString();
+                        
+                        callback({err: false, data: summary})
+                    }
+                })
+            }
+        })
+    }
 } 
 // read
 

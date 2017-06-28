@@ -146,4 +146,8 @@ router.get('/waterflow', function(req, res, next){
 router.get('/progressbar', function(req, res, next){
     res.render('index/progressbar/page.ejs')
 })
+
+router.get('/toclist', function(req, res, next){
+    res.render('index/toclist/page.ejs')
+})
 module.exports = router

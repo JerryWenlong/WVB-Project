@@ -14,17 +14,17 @@
       <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" :style="{width: nowValue + '%'}"></div>
     </div>
     <div class="">
-      <div class="input-group col-lg-4">
+      <div class="input-group col-sm-4">
         <span class="input-group-addon" id="bar-height">Height</span>
         <input type="text" name="" class="form-control" placeholder="Height (default 15px)" aria-describedby="bar-height" v-model="barHeight">
         <span class="input-group-addon">px</span>
       </div>
-      <div class="input-group col-lg-4">
+      <div class="input-group col-sm-4">
         <span class="input-group-addon" id="bar-value">Process</span>
         <input type="text" name="" class="form-control" placeholder="Process Value (default 5%)" aria-describedby="bar-value" v-model="defaultValue">
         <span class="input-group-addon">%</span>
       </div>
-      <div class="col-lg-4">
+      <div class="col-sm-4">
         <button class="btn" @click="startProgressing">Start</button>
         <button class="btn" @click="reset">Reset</button>
       </div>

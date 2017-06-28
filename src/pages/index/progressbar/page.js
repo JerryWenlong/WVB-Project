@@ -1,7 +1,7 @@
 require("jquery");
 require('bootstrap/dist/js/bootstrap.min.js');
 require('bootstrap/dist/css/bootstrap.min.css');
-require('./style.css')
+require('./style.css');
 let Vue = require("vue")
 
 let VM = new Vue({
@@ -21,19 +21,22 @@ let VM = new Vue({
     methods: {
         startProgressing: function(){
             let vm = this;
-            let clock = setInterval(function(){
+            vm.clock = setInterval(function(){
                 if(vm.mutativeValue < 100){
                     vm.mutativeValue += 1;
                 }else{
                     vm.mutativeValue = 100;
-                    clearInterval(clock)
+                    clearInterval(vm.clock)
                     console.log('stop')
                 }
             }, 50)
         },
         reset: function(){
             let vm = this;
+            if(vm.clock) 
+                clearInterval(vm.clock)
             vm.mutativeValue = 0;
         }
     }
 })
+
